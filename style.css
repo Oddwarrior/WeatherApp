@@ -17,16 +17,19 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    width: 390px;
-    margin: auto;
+    max-width: 100%;
+    margin: var(--spacingRegular) auto;
     scroll-behavior: smooth;
     text-transform: capitalize;
 }
 
 h1,
-h2,
+h2{
+    margin: 0;
+}
 h3 {
     margin: 0;
+    padding: var(--spacingMeduim);
 }
 
 p {
@@ -154,4 +157,17 @@ p {
     grid-area: humidity;
     text-align: center;
     font-weight: var(--fontSemiBold);
+}
+
+@media(width>=650px){
+
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "search search search search"
+            "current current current current"
+            "hourly hourly hourly hourly"
+            "fiveDay fiveDay fiveDay humidity"
+            "fiveDay fiveDay fiveDay feelsLike ";
+    }
 }
