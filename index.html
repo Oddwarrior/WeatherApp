@@ -15,48 +15,51 @@
 <body>
     <main class="container">
         <article id="currentForecast">
-            <h1 class = "city">City name</h1>
+            <h1 class="city">City name</h1>
             <p class="temp">temp</p>
             <p class="description">description</p>
             <p class="min-max-temp">H L</p>
         </article>
-            
+
         <article id="hourlyForecast">
-                <h1>Hourly forecast</h1>
-            <section class= "hourlyContainer">
-                 <article>
-                    <h2 class="time">Now</h2>
-                    <img  class="icon" >icon
-                    <p class = "hourlyTemp">temp</p>
-                </article>
-            
-            </section>
-            
-        </article>
-            
-        <article id="fiveDayForecast">
+            <h2>Hourly forecast</h2>
+            <section class="hourlyContainer">
                 <article>
-                    <h2>Today</h2>
-                    <p>icon</p>
-                    <p>low</p>
-                <p>high</p>
-            </article>
-            <article>
-                <h2>Tommarow</h2>
-                <p>icon</p>
-                <p>low</p>
-                <p>high</p>
-            </article>
+                    <h2 class="time">Now</h2>
+                    <img class="icon">icon
+                    <p class="hourlyTemp">temp</p>
+                </article>
+
+            </section>
+
+        </article>
+
+        <article id="fiveDayForecast">
+            <h2>5-day forecast</h2>
+            <section class="fiveDayForecastContainer">
+                <article class="dayWiseForecast">
+                    <h3>Today</h3>
+                    <img class="icon" src="" alt="">
+                    <p class="minTemp">low</p>
+                    <p class="maxTemp">high</p>
+                </article>
+                <article class="dayWiseForecast">
+                    <h3>wed</h3>
+                    <img src="" alt="">
+                    <p class="minTemp">low</p>
+                    <p class="maxTemp">high</p>
+                </article>
+            </section>
 
         </article>
 
         <article id="feelsLike">
             <h1>feels like</h1>
-            <p>temp</p>
+            <p class="feelsLikeTemp">temp</p>
         </article>
         <article id="humidity">
             <h1>humidity</h1>
-            <p>value</p>
+            <p class="humidityValue">value</p>
         </article>
 
     </main>

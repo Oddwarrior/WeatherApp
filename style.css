@@ -24,7 +24,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
     margin: 0;
 }
 
@@ -99,14 +100,48 @@ p {
     font-weight: var(--fontSemiBold);
 }
 
+/* styling related to 5 day forecast */
 #fiveDayForecast {
     grid-area: fiveDay;
+    text-align: center;
 }
+#fiveDayForecast .fiveDayForecastContainer{
+    display: grid;
+    grid-auto-flow: row;
+}
+.fiveDayForecastContainer .dayWiseForecast{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: var(--spacingRegular);
+    place-items: center;
+}
+.fiveDayForecastContainer .dayWiseForecast .minTemp{
+    font-size: var(--fontRegular);
+    font-weight: var(--fontSemiBold);
+    opacity: 50%;
+}
+.fiveDayForecastContainer .dayWiseForecast .maxTemp{
+    font-size: var(--fontRegular);
+    font-weight: var(--fontSemiBold);
+}
+.fiveDayForecastContainer .dayWiseForecast .icon{
+    height: 75px;
+    width: 75px;
+}
+.fiveDayForecastContainer .dayWiseForecast .day{
+   
+}
+
 
 #feelsLike {
     grid-area: feelsLike;
+    text-align: center;
+    font-weight: var(--fontSemiBold);
 }
 
 #humidity {
     grid-area: humidity;
+    text-align: center;
+    font-weight: var(--fontSemiBold);
 }
