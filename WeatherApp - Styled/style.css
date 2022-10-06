@@ -5,6 +5,8 @@
 }
 
 :root {
+    --primaryColor : #48CAE4;
+    --secondaryColor: rgba(2, 62, 138, 0.15);
     --spacingRegular: 16px;
     --spacingMeduim: 8px;
     --fonrSmall: 0.5 rem;
@@ -23,6 +25,8 @@ body {
     text-transform: capitalize;
     color: white;
     background-color: #48CAE4;
+    background-repeat: no-repeat;
+background-size: cover;
     ;
     /* background-image: url(cloudy.jpg); */
 }
@@ -69,16 +73,11 @@ p {
     border-radius: var(--spacingMeduim);
     padding: var(--spacingMeduim);
     text-decoration: none;
+    background-color: var(--secondaryColor);
 
 }
 
-#cloudimage{
-    grid-area: image;
 
-}
-.cloud{
-    width: 100px;
-}
 /* 
     current weather styling */
 #currentForecast {
@@ -106,9 +105,9 @@ p {
 #hourlyForecast {
     grid-area: hourly;
     text-align: center;
-    background: rgba(2, 62, 138, 0.15);
-    box-shadow:  8px 8px 16px #44bed6,
-             -8px -8px 16px #4cd6f2;
+    background: var(--secondaryColor);
+   /* box-shadow:  8px 8px 16px #44bed6,
+             -8px -8px 16px #4cd6f2; */
 }
 
 #hourlyForecast .hourlyContainer {
@@ -136,9 +135,9 @@ p {
 #fiveDayForecast {
     grid-area: fiveDay;
     text-align: center;
-    background: rgba(2, 62, 138, 0.15);
-    box-shadow:  8px 8px 16px #44bed6,
-             -8px -8px 16px #4cd6f2;
+    background: var(--secondaryColor);
+    /* box-shadow:  8px 8px 16px #44bed6,
+             -8px -8px 16px #4cd6f2; */
 }
 #fiveDayForecast .fiveDayForecastContainer{
     display: grid;
@@ -173,24 +172,24 @@ p {
     grid-area: feelsLike;
     text-align: center;
     font-weight: var(--fontSemiBold);
-    background: rgba(2, 62, 138, 0.15);
-    box-shadow:  8px 8px 16px #44bed6,
-             -8px -8px 16px #4cd6f2;
+    background:var(--secondaryColor);
+    /* box-shadow:  8px 8px 16px #44bed6,
+             -8px -8px 16px #4cd6f2; */
 }
 
 #humidity {
     grid-area: humidity;
     text-align: center;
     font-weight: var(--fontSemiBold);
-    background: rgba(2, 62, 138, 0.15);
-    box-shadow:  8px 8px 16px #44bed6,
-             -8px -8px 16px #4cd6f2;
+    background: var(--secondaryColor);
+    /* box-shadow:  8px 8px 16px #44bed6,
+             -8px -8px 16px #4cd6f2; */
 }
 
 
 #search{
     color: #C5D9F3;
-    background: rgba(2, 62, 138, 0.13);
+
     border-radius: 15px;
     height: 50px;
     outline: none;
@@ -199,7 +198,7 @@ p {
 
 }
 ::placeholder{
-   color :#C5D9F3;
+   color :lightgray;
 }
 
 @media(width>=650px){

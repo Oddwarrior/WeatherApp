@@ -34,11 +34,12 @@ const getHourlyWeatherData = async ({name:city}) => {
 
 //load functions ----------------------
 
-const loadCurrentWeatherData = ({ name, main: { temp, temp_max, temp_min }, weather: [{ description }] }) => {
+const loadCurrentWeatherData = ({ name, main: { temp, temp_max, temp_min }, weather: [{ description , main}] }) => {
     const CurrentWeatherDataElement = document.querySelector("#currentForecast");
     CurrentWeatherDataElement.querySelector(".city").textContent = name;
     CurrentWeatherDataElement.querySelector(".temp").textContent = formatTemperature(temp);
     CurrentWeatherDataElement.querySelector(".description").textContent = description;
+    loadBackground(main)
     CurrentWeatherDataElement.querySelector(".min-max-temp").textContent = `H: ${formatTemperature(temp_max)} L: ${formatTemperature(temp_min)}`;
     }
 
@@ -194,6 +195,69 @@ navigator.geolocation.getCurrentPosition(({coords})=>{
     selectedCity = {lat,lon};
     loadData();
 }, error=> console.log(error))
+}
+
+function loadBackground(main){
+    console.log(`main is ${main}`);
+    let image = "";
+    let secondaryColor = "";
+
+    let flag = false;
+    if(main=="Rain"){
+        image = "rain";
+        flag = true;
+        secondaryColor = "1C363779";
+        
+    }
+    if(main=="Snow"){
+        image = "snow";
+        flag = true;
+        secondaryColor ="#5297c6a6"
+    }
+    if(main=="Clouds"){
+        image = "clouds";
+        flag = true;
+        secondaryColor = "233C9990";
+    }
+    if(main=="Clear"){
+        image = "clearsky";
+        flag = true;
+        secondaryColor = "5aacdcd1";
+    }
+    if(main=="Dizzle"){
+        image = "dizzle";
+        flag = true;
+        secondaryColor = "1c2425c7";
+    }
+    if(main=="Thunderstorm"){
+        image = "thunderstrom";
+        flag = true;
+        secondaryColor = "312e4fbd";
+    }
+    if(main=="Haze" || main =="Mist" || main =="Fog"){
+        image = "haze";
+        flag = true;
+        secondaryColor = "cdd0d79c";
+        document.getElementById("search").style.color= "gray";
+    }
+    if(main=="Sand"){
+        image = "sand";
+        flag = true;
+        secondaryColor = "f3ecd999";
+    }
+
+    if(flag){
+        document.querySelector(':root').style.setProperty('--secondaryColor',`#${secondaryColor}`)
+        document.body.style.backgroundImage = `url('backgrounds/${image}.jpg')`;
+       
+        const  hourlyForecast = document.getElementById("hourlyForecast");
+        const fiveDayForecast =  document.getElementById("fiveDayForecast");
+        const feelsLike = document.getElementById("feelsLike");
+        const humidity = document.getElementById("humidity");
+
+    }
+       
+
 }
 
 const debounceSearch = debounce((event)=> onSearchChange(event))
