@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Weather | Home</title>
+</head>
+
+<body>
+    <main class="container">
+        <input list="cities" type="search" name="search " id="search" placeholder="Search a City" autocomplete="off"/>
+
+
+        <datalist id="cities">
+
+        </datalist>
+
+        <!-- <article id="clodimage">
+            <img class="cloud" src="cloud.png" alt="cloud-image">
+        </article> -->
+
+        <article id="currentForecast">
+            <h1 class="city">--</h1>
+            <p class="temp">--</p>
+            <p class="description">--</p>
+            <p class="min-max-temp">H L</p>
+        </article>
+
+        <article id="hourlyForecast">
+            <h2>Hourly forecast</h2>
+            <section class="hourlyContainer">
+                <article>
+                    <h2 class="time">--</h2>
+                    <p class="icon">--</p> 
+                    <p class="hourlyTemp">--</p>
+                </article>
+
+            </section>
+
+        </article>
+
+        <article id="fiveDayForecast">
+            <h2>5-day forecast</h2>
+            <section class="fiveDayForecastContainer">
+                <article class="dayWiseForecast">
+                    <h3>Today</h3>
+                    <p class="icon">--</p>
+                    <p class="minTemp">--</p>
+                    <p class="maxTemp">--</p>
+                </article>
+                <article class="dayWiseForecast">
+                    <h3>Tommarow</h3>
+                    <p class="icon">--</p>
+                    <p class="minTemp">--</p>
+                    <p class="maxTemp">--</p>
+                </article>
+            </section>
+
+        </article>
+
+        <article id="feelsLike">
+            <h1>feels like</h1>
+            <p class="feelsLikeTemp">--</p>
+        </article>
+        <article id="humidity">
+            <h1>humidity</h1>
+            <p class="humidityValue">--</p>
+        </article>
+
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
