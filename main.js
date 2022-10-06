@@ -34,11 +34,12 @@ const getHourlyWeatherData = async ({name:city}) => {
 
 //load functions ----------------------
 
-const loadCurrentWeatherData = ({ name, main: { temp, temp_max, temp_min }, weather: [{ description }] }) => {
+const loadCurrentWeatherData = ({ name, main: { temp, temp_max, temp_min }, weather: [{ description , main}] }) => {
     const CurrentWeatherDataElement = document.querySelector("#currentForecast");
     CurrentWeatherDataElement.querySelector(".city").textContent = name;
     CurrentWeatherDataElement.querySelector(".temp").textContent = formatTemperature(temp);
     CurrentWeatherDataElement.querySelector(".description").textContent = description;
+    loadBackground(main)
     CurrentWeatherDataElement.querySelector(".min-max-temp").textContent = `H: ${formatTemperature(temp_max)} L: ${formatTemperature(temp_min)}`;
     }
 
@@ -194,6 +195,49 @@ navigator.geolocation.getCurrentPosition(({coords})=>{
     selectedCity = {lat,lon};
     loadData();
 }, error=> console.log(error))
+}
+
+function loadBackground(main){
+    console.log(`main is ${main}`);
+    let image = "";
+    let secondaryColor = "";
+
+    let flag = false;
+    if(main=="Rain"){
+        image = "rain2";
+        flag = true;
+        secondaryColor = "1C363779";
+        
+    }
+    if(main=="Snow"){
+        image = "snow";
+        flag = true;
+    }
+    if(main=="Clouds"){
+        image = "clouds";
+        flag = true;
+        secondaryColor = "233C9990";
+    }
+
+    if(flag){
+        document.querySelector(':root').style.setProperty('--secondaryColor',`#${secondaryColor}`)
+        document.body.style.backgroundImage = `url('backgrounds/${image}.jpg')`;
+        const  search = document.getElementById("search");
+        const  hourlyForecast = document.getElementById("hourlyForecast");
+        const fiveDayForecast =  document.getElementById("fiveDayForecast");
+        const feelsLike = document.getElementById("feelsLike");
+        const humidity = document.getElementById("humidity");
+
+        // search.style.background="rgba(30, 30, 30, 0.67)"
+        // search.style.color="light-gray"
+        // hourlyForecast.style.background = "rgba(30, 30, 30, 0.67)"
+        // fiveDayForecast.style.background = "rgba(30, 30, 30, 0.67)"
+        // feelsLike.style.background = "rgba(30, 30, 30, 0.67)"
+        // humidity.style.background = "rgba(30, 30, 30, 0.67)"
+
+    }
+       
+
 }
 
 const debounceSearch = debounce((event)=> onSearchChange(event))
