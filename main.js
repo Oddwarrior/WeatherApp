@@ -232,7 +232,7 @@ function loadBackground(main){
     if(main=="Thunderstorm"){
         image = "thunderstrom";
         flag = true;
-        secondaryColor = "312e4fbd";
+        secondaryColor = "4244728f";
     }
     if(main=="Haze" || main =="Mist" || main =="Fog"){
         image = "haze";
