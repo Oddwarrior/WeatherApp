@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,9 +22,6 @@
 
         </datalist>
 
-        <!-- <article id="clodimage">
-            <img class="cloud" src="cloud.png" alt="cloud-image">
-        </article> -->
 
         <article id="currentForecast">
             <h1 class="city">--</h1>
@@ -33,7 +31,7 @@
         </article>
 
         <article id="hourlyForecast">
-            <h2>Hourly forecast</h2>
+            <h3>Hourly forecast</h3>
             <section class="hourlyContainer">
                 <article>
                     <h2 class="time">--</h2>
@@ -46,7 +44,7 @@
         </article>
 
         <article id="fiveDayForecast">
-            <h2>5-day forecast</h2>
+            <h3>5-day forecast</h3>
             <section class="fiveDayForecastContainer">
                 <article class="dayWiseForecast">
                     <h3>Today</h3>
@@ -65,11 +63,11 @@
         </article>
 
         <article id="feelsLike">
-            <h1>feels like</h1>
+            <h3>feels like</h3>
             <p class="feelsLikeTemp">--</p>
         </article>
         <article id="humidity" >
-            <h1>humidity</h1>
+            <h3>humidity</h3>
             <p class="humidityValue">--</p>
         </article>
 

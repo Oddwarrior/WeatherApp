@@ -206,34 +206,54 @@ function loadBackground(main){
     if(main=="Rain"){
         image = "rain2";
         flag = true;
-        secondaryColor = "1C363779";
+        secondaryColor = "022539d6";
         
     }
     if(main=="Snow"){
         image = "snow";
         flag = true;
+        secondaryColor ="#5297c6a6"
     }
     if(main=="Clouds"){
         image = "clouds";
         flag = true;
-        secondaryColor = "233C9990";
+        secondaryColor = "5d70b3c4";
+    }
+    if(main=="Clear"){
+        image = "clearsky";
+        flag = true;
+        secondaryColor = "5aacdcd1";
+    }
+    if(main=="Dirzzle"){
+        image = "dizzle";
+        flag = true;
+        secondaryColor = "1c2425c7";
+    }
+    if(main=="Thunderstorm"){
+        image = "thunderstrom";
+        flag = true;
+        secondaryColor = "312e4fbd";
+    }
+    if(main=="Haze" || main =="Mist" || main =="Fog"){
+        image = "haze";
+        flag = true;
+        secondaryColor = "cdd0d79c";
+        document.getElementById("search").style.color= "gray";
+    }
+    if(main=="Sand"){
+        image = "sand";
+        flag = true;
+        secondaryColor = "f3ecd999";
     }
 
     if(flag){
         document.querySelector(':root').style.setProperty('--secondaryColor',`#${secondaryColor}`)
         document.body.style.backgroundImage = `url('backgrounds/${image}.jpg')`;
-        const  search = document.getElementById("search");
+       
         const  hourlyForecast = document.getElementById("hourlyForecast");
         const fiveDayForecast =  document.getElementById("fiveDayForecast");
         const feelsLike = document.getElementById("feelsLike");
         const humidity = document.getElementById("humidity");
-
-        // search.style.background="rgba(30, 30, 30, 0.67)"
-        // search.style.color="light-gray"
-        // hourlyForecast.style.background = "rgba(30, 30, 30, 0.67)"
-        // fiveDayForecast.style.background = "rgba(30, 30, 30, 0.67)"
-        // feelsLike.style.background = "rgba(30, 30, 30, 0.67)"
-        // humidity.style.background = "rgba(30, 30, 30, 0.67)"
 
     }
        
